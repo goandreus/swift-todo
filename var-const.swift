@@ -37,7 +37,13 @@ func imprimir(unTexto text:String) /* -> Void */ {
 }
 imprimir(unTexto: "Hola gente")
 
-func dividir(dividendo a:Int, divisor b:Int) -> Int {
-    return a/b
+func dividir(dividendo :Int, divisor :Int) -> Int { // EL ALIAS ES LA VARIABLE
+    return dividendo/divisor
 }
 let cociente = dividir(dividendo:12, divisor:4)
+
+func suma(_ A:Int, _ B:Int) -> Int{
+    return A + B
+}
+
+let sumaRpta = suma (1, 2)

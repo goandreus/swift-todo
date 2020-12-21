@@ -103,7 +103,7 @@ class Curso {
     
     init(){
         
-        //this == self 
+        //this == self
         self.titulo = ""
         self.maestro = Profesor()
         self.estudiantes = []
@@ -118,3 +118,60 @@ class Curso {
 
 let iosBasico = Curso(titulo: "ios", maestro: tutor, estudiantes: [estudiante])
 let unCurso = Curso()
+
+//MARK -  IF LET -- SE UTILIZA PARA VALIDAR OPTINAL
+
+let numeroString = "123"
+
+//! --> permite obtener el valor de un OPTIONAL (UNWARP)
+
+//version 1
+let numeroConvertido = Int(numeroString)
+if numeroConvertido != nil {
+    let numeroUNWRAP = numeroConvertido!
+    print("v1 El numero es: \(numeroUNWRAP)")
+}
+
+//version 2
+let numeroConvertido2 = Int(numeroString)
+if let numeroUNWRAP = numeroConvertido2{
+    print("v2 El numero es: \(numeroUNWRAP)")
+}
+
+//version 3
+if let numeroUNWRAP = Int(numeroString){
+    print("v3 El numero es: \(numeroUNWRAP)")
+}
+
+//MARk: - GUARD -- SE UTILIZA PARA VALIDAR OPTIONAL
+
+func convertirEntero(elTexto texto: String) -> Int{
+    //Patron Dorado --> Valida lo que no la ruta critica, si no de la ruta critica haz un return
+    
+    if texto.isEmpty{
+        return 0
+    }
+    if texto.contains(".") {
+        return 0
+    }
+    guard let numero = Int(texto) else {
+        return 0
+    }
+    return numero
+
+    
+    
+//    if !texto.isEmpty {
+//        if !texto.contains("."){
+//            if let numero = Int (texto){
+//                return numero
+//            }else {
+//                return 0
+//            }
+//        }else {
+//            return 0
+//        }
+//    }else {
+//        return 0
+//    }
+}
